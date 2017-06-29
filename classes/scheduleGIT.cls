@@ -67,6 +67,8 @@ public with sharing class scheduleGIT implements Schedulable{
 
         System.debug(JSON.serialize(returned));
 
+
+        
         Boolean callWebservice = true;
 
         if(callWebservice && settings.bounceback__TokenGit__c <> null){
