@@ -26,6 +26,19 @@ public with sharing class LandingGITController {
 
     public void save(){
         bounceback__GitSettings__c gitSetting = this.GitScheduleItem.getGitSetting();
+        bounceback__GitSettings__c original = bounceback__GitSettings__c.getValues(this.GitScheduleItem.name);
+
+
+
+        if( // We check the diff of "Include" to know if we should reset or not
+                original.bounceback__IncludeApexClasses__c != gitSetting.bounceback__IncludeApexClasses__c ||
+                original.bounceback__IncludeVisualForcePages__c != gitSetting.bounceback__IncludeVisualForcePages__c ||
+                original.bounceback__IncludeTriggers__c != gitSetting.bounceback__IncludeTriggers__c ||
+                original.bounceback__IncludeComponents__c != gitSetting.bounceback__IncludeComponents__c
+                ){
+            gitSetting.bounceback__CurrentSelector__c = null;
+        }
+
         if(this.mode == 'new' && [select count() from bounceback__GitSettings__c where name =:gitSetting.Name] == 1){
             ApexPages.addmessage(new ApexPages.message(ApexPages.severity.WARNING,'This name is already used'));
         }else{
