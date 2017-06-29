@@ -69,7 +69,7 @@ public with sharing class scheduleGIT implements Schedulable{
 
 
 
-        Boolean callWebservice = true;
+        Boolean callWebservice = true; // test
 
         if(callWebservice && settings.bounceback__TokenGit__c <> null){
             // Here we send the information to server

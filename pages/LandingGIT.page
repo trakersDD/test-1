@@ -149,7 +149,10 @@
                     <apex:inputText value="{!GitScheduleItem.GitRepository}" id="new_gitRepository"></apex:inputText>
                 </apex:pageBlockSectionItem>
 
-                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Include Components" for="new_components"></apex:outputLabel>
+                    <apex:inputCheckbox value="{!GitScheduleItem.IncludeComponents}" id="new_components"></apex:inputCheckbox>
+                </apex:pageBlockSectionItem>
                 <apex:pageBlockSectionItem >
                     <apex:outputLabel value="GIT Path" for="new_gitPath"></apex:outputLabel>
                     <apex:inputText value="{!GitScheduleItem.GitPath}" id="new_gitPath"></apex:inputText>

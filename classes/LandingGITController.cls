@@ -146,6 +146,7 @@ public with sharing class LandingGITController {
         public Boolean IncludeApexClasses{get;set;}
         public Boolean IncludeTriggers{get;set;}
         public Boolean IncludeVisualForcePages{get;set;}
+        public Boolean IncludeComponents{get;set;}
 
         public String gitUsername {get;set;}
         public String gitEmail {get;set;}
@@ -167,6 +168,7 @@ public with sharing class LandingGITController {
             this.IncludeApexClasses         = item.bounceback__IncludeApexClasses__c;
             this.IncludeTriggers            = item.bounceback__IncludeTriggers__c;
             this.IncludeVisualForcePages    = item.bounceback__IncludeVisualForcePages__c;
+            this.IncludeComponents          = item.bounceback__IncludeComponents__c;
             this.gitUsername                = item.bounceback__UsernameGit__c;
             this.gitEmail                   = item.bounceback__EmailGit__c;
             this.gitRepository              = item.bounceback__RepositoryGit__c;
@@ -185,6 +187,7 @@ public with sharing class LandingGITController {
                     item.bounceback__IncludeApexClasses__c          = IncludeApexClasses;
                     item.bounceback__IncludeTriggers__c             = IncludeTriggers;
                     item.bounceback__IncludeVisualForcePages__c     = IncludeVisualForcePages;
+                    item.bounceback__IncludeComponents__c           = IncludeComponents;
                     item.bounceback__UsernameGit__c                 = gitUsername;
                     item.bounceback__EmailGit__c                    = gitEmail;
                     item.bounceback__RepositoryGit__c               = gitRepository;
