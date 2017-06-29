@@ -68,14 +68,14 @@ public with sharing class scheduleGIT implements Schedulable{
         System.debug(JSON.serialize(returned));
 
 
-        
+
         Boolean callWebservice = true;
 
         if(callWebservice && settings.bounceback__TokenGit__c <> null){
             // Here we send the information to server
             HttpRequest req = new HttpRequest();
             req.setMethod('POST');
-
+            req.setTimeout(120000);
             req.setHeader('content-type', 'application/json');
             req.setEndpoint(URL+'/rest/git');
             req.setBody(JSON.serialize(returned));
